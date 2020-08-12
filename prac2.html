@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        td th {
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <table border="1">
+        <tr>
+            <td>
+                <h1>Bài 1:</h1>
+                <button onclick="bai1()">runnn</button>
+            </td>
+            <td>
+                <h1>Bài 2: </h1>
+                <button onclick="bai2()">runnn</button>
+            </td>
+            <td>
+                <h1>Bài 3: </h1>
+                <button onclick="bai3()">runnn</button>
+            </td>
+            <td>
+                <h1>Bài 4: </h1>
+                <button onclick="bai4()">runnn</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h1>Bài 5: </h1>
+                <button onclick="bai5()">runnn</button>
+            </td>
+            <td>
+                <h1>Bài 6: </h1>
+                <button onclick="bai6()">runnn</button>
+            </td>
+            <td>
+                <h1>Bài 7: </h1>
+                <button onclick="bai7()">runnn</button>
+            </td>
+            <td>
+                <h1>Bài 8: </h1>
+                <button onclick="bai8()">runnn</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h1>Bài 9: </h1>
+                <button onclick="bai9()">runnn</button>
+            </td>
+            <td>
+                <h1>Bài 10: </h1>
+                <button onclick="bai10()">runnn</button>
+            </td>
+            <td>
+                <h1>Bài 11: </h1>
+                <button onclick="bai11()">runnn</button>
+            </td>
+            <td>
+                <h1>Bài 12: </h1>
+                <button onclick="bai12()">runnn</button>
+            </td>
+        </tr>
+    </table>
+</body>
+
+</html>
+<script>
+    function bai1() {
+        let cel = prompt('nhập độ C: ');
+        let F = cel * 9 / 5 + 32;
+        alert(F + 'độ F');
+    }
+
+    function bai2() {
+        let m = prompt('nhập đơn vị: ', 'm');
+        let ft = m / 3.2808;
+        alert(m + 'm =' + ft + 'ft');
+    }
+
+    function bai3() {
+        let a = prompt('nhập cạnh a: ');
+        let area = a * a;
+        alert('dien tich =' + area);
+    }
+
+    function bai4() {
+        let a = prompt('nhap canh a: ');
+        let b = prompt('nhap canh b: ');
+        alert('chu vi = ' + (2 * a + 2 * b));
+    }
+
+    function bai5() {
+        let a, b;
+        a = prompt('nhap a');
+        b = prompt('nhap b');
+        alert('dein tich = ' + (a / 2 + b / 2));
+    }
+
+    function bai6(e, f) {
+        let a = parseInt(prompt('nhap a: '));
+        let b = parseInt(prompt('nhap b: '));
+        let x = -b / a;
+        a == 0 && b == 0 ? alert('vo so nghiem') :
+            a == 0 && b != 0 ? alert('vo nghiem') : alert('nhiem: ' + x);
+
+    }
+
+    function bai7() {
+        let a = parseInt(prompt('nhap a: '));
+        let b = parseInt(prompt('nhap b: '));
+        let c = parseInt(prompt('nhap c: '));
+
+        let delta = b * b - 4 * a * c;
+        let x1 = (-b + Math.sqrt(delta)) / (2 * a);
+        let x2 = (-b - Math.sqrt(delta)) / (2 * a);
+
+        if (a == 0) {
+            bai6(b, c);
+        } else {
+            if (delta >= 0) {
+                alert('x1 = ' + x1 + "---x2 = " + x2);
+            } else {
+                alert('vo nghiem');
+            }
+        }
+    }
+
+    function bai8() {
+        let n = prompt('nhap mot so');
+        if (0 < n && n <= 120) {
+            alert('đây là tuổi của một người');
+        } else {
+            alert('đây không phải là tuổi của một người');
+        }
+
+    }
+
+    function bai9() {
+        let a = parseInt(prompt('nhap a: '));
+        let b = parseInt(prompt('nhap b: '));
+        let c = parseInt(prompt('nhap c: '));
+
+        if (a > 0 && b > 0 && c > 0) {
+            if (a + b > c || a + c > b || c + b > a) {
+                alert('có thể là 3 cạnh tam giác');
+            } else {
+                alert('không phải 3 cạnh tam giác');
+            }
+        } else {
+            alert('invalid input');
+        }
+    }
+
+    function bai10() {
+        let n = prompt('nhập số điện: ')
+        let bill;
+
+        let lv1 = 50 * 1678;
+        let lv2 = 50 * 1734;
+        let lv3 = 100 * 2014;
+        let lv4 = 100 * 2536;
+        let lv5 = 2834 * 100;
+        if (0 < n && n < 50) {
+            bill = 1678 * n;
+        } else if (n < 101) {
+            bill = lv1 + 1734 * (n - 50);
+        } else if (n < 201) {
+            bill = lv1 + lv2 + 2014 * (n - 100);
+        } else if (n < 301) {
+            bill = lv1 + lv2 + lv3 + 2536 * (n - 200);
+        } else if (n < 401) {
+            bill = lv1 + lv2 + lv3 + lv4 + 2834 * (n - 300);
+        } else if (n >= 401) {
+            bill = lv1 + lv2 + lv3 + lv4 + lv5 + 2927 * (n - 400);
+        }
+        alert("bill= " + bill + 'vnd')
+    }
+
+    function bai11() {
+        let n = prompt('nhập số điện: ')
+        let bill;
+
+        let lv1 = 250000;
+        let lv2 = 750000;
+        let lv3 = 1950000;
+        let lv4 = 4750000;
+        if (0 < n && n < 5000000) {
+            bill = 5 / 100 * n;
+        } else if (n < 10000001) {
+            bill = lv1 + 0.1 * (n - 5000000);
+        } else if (n < 18000000) {
+            bill = lv2 + 0.15 * (n - 10000000);
+        } else if (n < 32000000) {
+            bill = lv3 + 0.2 * (n - 18000000);
+        } else {
+            bill = lv4 + 0.25 * (n - 32000000);
+        }
+        alert("bill= " + bill + 'vnd');
+    }
+
+    function bai12() {
+        let m = parseInt(prompt('nhập số tiền ban đầu: '));
+        let time = parseInt(prompt('nhập thời gian: '));
+
+        let result = m * Math.pow((1 + 7 / 100), time);
+        alert(result + 'đ');
+    }
+</script>
